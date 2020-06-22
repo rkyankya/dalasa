@@ -1,0 +1,20 @@
+common: &common
+  adapter: postgresql
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  reconnect: true
+
+development:
+  <<: *common
+  database: <%= ENV['DB_NAME'] %>
+
+test:
+  <<: *common
+  database: <%= ENV['DB_NAME_TEST'] %>
+
+production:
+  <<: *common
+  url: <%= ENV['DATABASE_URL'] %> #This is the environment variable created by our Dokku command earlier
+  encoding: unicode
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
