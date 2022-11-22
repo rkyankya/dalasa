@@ -167,7 +167,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'dalli', '~> 2.7' # High performance memcached client for Ruby. https://github.com/petergoldstein/dalli
+  gem 'dalli', '~> 3.2' # High performance memcached client for Ruby. https://github.com/petergoldstein/dalli
   gem 'skylight', '~> 4.2' # Skylight is a smart profiler for Rails, Sinatra, and other Ruby apps.
   gem 'heroku-deflater', '~> 0.6' # Enable gzip compression on heroku, but don't compress images.
   gem 'aws-sdk', '~> 3.0', '>= 3.0.1', require: false
